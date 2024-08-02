@@ -1,0 +1,427 @@
+.chat {
+    flex: 2;
+    border-left: 1px solid #dddddd35;
+    border-right: 1px solid #dddddd35;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat .top {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #dddddd35;
+}
+
+.chat .top .user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.chat .top .user img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.chat .top .user .texts {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.chat .top .user .texts span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.chat .top .user .texts p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #a5a5a5;
+}
+
+.chat .top .icons {
+    display: flex;
+    gap: 20px;
+
+    img{
+        width: 20px;
+        height: 20px;
+    }
+    button{
+        background-color:#5182fed0;
+        padding: 5px 10px;
+        display: flex;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+}
+
+.chat .center {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.chat .center::-webkit-scrollbar {
+    display: none; 
+}
+
+.chat .center .message {
+    max-width: 70%;
+    display: flex;
+    gap: 20px;
+}
+
+.chat .center .message.own {
+    align-self: flex-end;
+}
+
+.chat .center .message.own .texts p {
+    background-color: #00000058;
+}
+
+.chat .center .message img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+.chat .center .message .texts {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.chat .center .message .texts img {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.chat .center .message .texts p {
+    padding: 20px;
+    background-color: rgba(17, 25, 40, 0.3);
+    border-radius: 10px;
+}
+
+.chat .center .message .texts span {
+    font-size: 13px;
+}
+
+.chat .center .message .texts audio {
+    width: 230px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.chat .center .message .texts audio:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.chat .center .message .texts audio::-webkit-media-controls-panel {
+    background-color: #f9f9f99b;
+    border-radius: 5px;
+}
+
+.chat .center .message .texts audio::-webkit-media-controls-play-button {
+    filter: hue-rotate(45deg);
+}
+
+.chat .center .message .texts audio::-webkit-media-controls-timeline {
+    height: 4px;
+}
+
+.chat .center .message .texts audio::-webkit-media-controls-current-time-display,
+.chat .center .message .texts audio::-webkit-media-controls-time-remaining-display {
+    font-size: 12px;
+    color: #555;
+}
+
+
+.chat .bottom {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #dddddd35;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.chat .bottom .icons {
+    display: flex;
+    gap: 15px;
+}
+
+.chat .bottom img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.chat .bottom input {
+    flex: 1;
+    background-color: rgba(17, 25, 40, 0.5);
+    border: none;
+    outline: none;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.chat .bottom input:disabled {
+    cursor: not-allowed;
+}
+
+.chat .bottom .emoji {
+    position: relative;
+}
+
+.chat .bottom .emoji .picker {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+}
+
+.chat .bottom .sendButton {
+    background-color: #5183fe;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat .bottom .sendButton:disabled {
+    background-color: #5182fe9d;
+    cursor: not-allowed;
+}
+
+.camera {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; 
+    max-width: 600px; 
+    height: auto; 
+    background:  rgba(0, 0, 0, 0.600);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.camera video {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.camera button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #5183fe;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.camera button:nth-child(2) {
+    background-color: #ff4d4d;
+}
+.preview {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; 
+    max-width: 600px; 
+    height: auto; 
+    background: rgba(2, 2, 2, 0.600);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+  
+  .preview h3 {
+    margin-bottom: 15px;
+  }
+  
+  .preview img {
+    max-width: 100%;
+    max-height: 400px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }
+  
+  .preview button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .preview button:hover {
+    background-color: #0056b3;
+  }
+  
+  .preview button.cancel {
+    background-color: #dc3545;
+  }
+  
+  .preview button.cancel:hover {
+    background-color: #c82333;
+  }
+
+  .call {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; 
+    max-width: 600px; 
+    height: auto; 
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.call .video-container {
+    width: 100%;
+    max-width: 100%;
+    height: 0;
+    padding-top: 60%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.call video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.call button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #5183fe;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Tag button style */
+.message button {
+    background-color: #7b777796;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 5px;
+    display:flex;                                         
+    color: white;
+    border: 1px;
+    padding: 10px 25px;
+    cursor: pointer;
+    margin-left: 0px; 
+    height:20px;
+    width: 20px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    
+  }
+  .message {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+    background-color: #0b0b0b9b;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 70%;
+    margin: 0;
+  }
+  
+  .tagged-message-preview {
+    background-color: #100f0f45;
+    padding: 10px;
+    margin-top: 10px; 
+    display: flex;
+    align-items: center;
+  }
+  
+  .tagged-message-preview span {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .tagged-message-preview button {
+    margin-left: auto; 
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .tagged-message-preview img {
+    max-width: 50px; 
+    max-height: 50px; 
+    margin-left: 10px; 
+  }
+  
+  .bottom .cancel-button {
+    background-color: #dc3545;
+    color: white;
+    border: 1px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px; 
+    cursor: pointer; 
+  }
+  
